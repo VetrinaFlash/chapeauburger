@@ -97,15 +97,13 @@ h1, h2, h3, h4 { font-family: var(--font-titoli); margin: 0 0 0.5em; line-height
 
 /* Hero */
 .hero {
-  background: linear-gradient(180deg, rgba(26,21,18,0.55), rgba(26,21,18,0.85)), var(--nero);
-  background-size: cover;
-  background-position: center;
-  color: var(--bianco);
+  background: var(--crema);
+  color: var(--nero);
   padding: 70px 0 60px;
   text-align: center;
 }
-.hero h1 { font-size: clamp(2rem, 6vw, 3.4rem); }
-.hero .sottotitolo { font-size: 1.1rem; opacity: 0.9; max-width: 620px; margin: 0 auto 1.2em; }
+.hero h1 { font-size: clamp(2rem, 6vw, 3.4rem); color: var(--nero); }
+.hero .sottotitolo { font-size: 1.1rem; opacity: 0.8; max-width: 620px; margin: 0 auto 1.2em; }
 .hero-azioni { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; margin: 20px 0 34px; }
 .btn {
   display: inline-flex;
@@ -124,14 +122,15 @@ h1, h2, h3, h4 { font-family: var(--font-titoli); margin: 0 0 0.5em; line-height
   display: inline-flex;
   flex-wrap: wrap;
   gap: 18px;
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.2);
+  background: var(--bianco);
+  border: 1px solid var(--crema-2);
   border-radius: var(--radius);
   padding: 16px 24px;
   font-size: 0.9rem;
   justify-content: center;
+  box-shadow: var(--ombra);
 }
-.hero-orari strong { color: var(--arancio); }
+.hero-orari strong { color: var(--arancio-scuro); }
 
 /* Sezioni generiche */
 section { padding: 64px 0; }

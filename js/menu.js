@@ -40,6 +40,7 @@
     stato.categoriaAttiva = stato.catalogo.categorie[0]?.id || null;
     renderTabs();
     renderCategorie();
+    mostraSoloCategoria(stato.categoriaAttiva);
   }
 
   function renderTabs() {
@@ -55,8 +56,18 @@
       btn.addEventListener("click", () => {
         stato.categoriaAttiva = btn.dataset.cat;
         renderTabs();
-        document.getElementById(`sezione-${btn.dataset.cat}`)?.scrollIntoView({ behavior: "smooth", block: "start" });
+        mostraSoloCategoria(btn.dataset.cat);
+        el.container.scrollIntoView({ behavior: "smooth", block: "start" });
       });
+    });
+  }
+
+  // Filtra: mostra SOLO la categoria selezionata, nasconde tutte le altre
+  // (i tab erano solo un ancoraggio di scroll: su mobile con tante categorie
+  // sembrava un elenco confuso invece di un vero filtro).
+  function mostraSoloCategoria(catId) {
+    el.container.querySelectorAll(".categoria-sezione").forEach((sezione) => {
+      sezione.style.display = sezione.id === `sezione-${catId}` ? "block" : "none";
     });
   }
 
