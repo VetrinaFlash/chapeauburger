@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ordina Online | Chapeau Burger Aversa</title>
+<meta name="description" content="Ordina online da Chapeau Burger Aversa: componi il tuo panino, scegli tra grigliate, primi e fritti. Asporto e domicilio.">
+<link rel="icon" href="images/favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="css/menu.css">
+</head>
+<body>
+
+<header class="menu-topbar">
+  <a href="index.html" class="menu-topbar-brand"><img src="images/logo.png" alt="Chapeau Burger"> Chapeau Burger</a>
+  <button class="btn-carrello" id="btn-carrello">
+    <i class="fa-solid fa-cart-shopping"></i> Carrello
+    <span class="badge" id="badge-carrello" style="display:none;">0</span>
+  </button>
+</header>
+
+<div class="categorie-tabs" id="categorie-tabs"></div>
+
+<main class="menu-container" id="menu-container">
+  <p style="text-align:center; opacity:0.6;">Caricamento menu...</p>
+</main>
+
+<!-- Modal dettaglio prodotto -->
+<div class="overlay" id="overlay-prodotto">
+  <div class="modal" id="modal-prodotto">
+    <div class="modal-header-wrap">
+      <img id="modal-prodotto-img" class="modal-img" src="" alt="">
+      <button class="modal-chiudi" id="modal-chiudi"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="modal-body">
+      <h2 id="modal-prodotto-nome"></h2>
+      <p class="descrizione" id="modal-prodotto-descrizione"></p>
+      <div id="modal-prodotto-scelte"></div>
+      <div class="qta-select">
+        <button class="qta-btn" id="qta-meno">−</button>
+        <span class="qta-valore" id="modal-prodotto-qta">1</span>
+        <button class="qta-btn" id="qta-piu">+</button>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-aggiungi-carrello" id="btn-aggiungi-carrello" disabled>
+        <i class="fa-solid fa-cart-plus"></i> Aggiungi al carrello
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Drawer carrello -->
+<div class="overlay" id="overlay-carrello"></div>
+<aside class="drawer" id="drawer-carrello">
+  <div class="drawer-header">
+    <h2>Il tuo ordine</h2>
+    <button class="drawer-chiudi" id="drawer-chiudi"><i class="fa-solid fa-xmark"></i></button>
+  </div>
+  <div class="drawer-body" id="drawer-carrello-body"></div>
+  <div class="drawer-footer">
+    <div class="totale-riga finale">
+      <span>Totale</span>
+      <span id="carrello-subtotale">0.00 €</span>
+    </div>
+
+    <form id="form-checkout" data-tipo="asporto" style="margin-top:14px;" class="form-checkout">
+      <div class="tipo-consegna">
+        <button type="button" class="attivo" data-tipo="asporto">Asporto</button>
+        <button type="button" data-tipo="domicilio">Domicilio</button>
+      </div>
+
+      <label for="nome">Nome e cognome</label>
+      <input type="text" id="nome" name="nome" required>
+
+      <label for="telefono">Telefono</label>
+      <input type="tel" id="telefono" name="telefono" required placeholder="333 1234567">
+
+      <div id="campo-indirizzo" style="display:none;">
+        <label for="indirizzo">Indirizzo di consegna</label>
+        <input type="text" id="indirizzo" name="indirizzo">
+      </div>
+
+      <label for="note">Note per l'ordine (opzionale)</label>
+      <textarea id="note" name="note" rows="2"></textarea>
+
+      <label for="promo_codice">Codice promo (opzionale)</label>
+      <input type="text" id="promo_codice" name="promo_codice" placeholder="Es. BENVENUTO">
+
+      <div class="errore-form" id="errore-checkout"></div>
+
+      <button type="submit" class="btn-aggiungi-carrello" id="btn-invia-ordine" style="margin-top:16px;">
+        <i class="fa-brands fa-whatsapp"></i> Invia ordine su WhatsApp
+      </button>
+    </form>
+  </div>
+</aside>
+
+<div class="toast" id="toast"></div>
+
+<script src="js/menu-fallback.js"></script>
+<script src="js/menu.js"></script>
+</body>
+</html>

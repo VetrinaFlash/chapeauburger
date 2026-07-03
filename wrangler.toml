@@ -1,0 +1,14 @@
+name = "chapeau-burger"
+compatibility_date = "2024-09-01"
+pages_build_output_dir = "."
+
+[[d1_databases]]
+binding = "DB"
+database_name = "chapeau-burger-db"
+database_id = "REPLACE_WITH_YOUR_D1_DATABASE_ID"
+
+# Variabili d'ambiente da configurare in Cloudflare Pages (Settings > Environment variables),
+# MAI in chiaro qui nel repo:
+#   ADMIN_TOKEN_SECRET   -> segreto lungo/casuale usato per firmare i cookie di sessione admin (HMAC SHA-256)
+#   ADMIN_PASSWORD       -> password di accesso alla dashboard admin
+#   STAFF_ACCESS_CODE    -> codice di accesso alla vista staff.html (modulo magazzino)

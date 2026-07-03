@@ -1,0 +1,73 @@
+:root {
+  --nero: #1a1512;
+  --crema: #fdf8f0;
+  --crema-2: #f5ecdb;
+  --arancio: #e87b1e;
+  --arancio-scuro: #c85f0f;
+  --rosso: #d1322f;
+  --testo: #2b241c;
+  --bianco: #ffffff;
+  --bordo: #e5dcc9;
+  --radius: 14px;
+  --font: "Nunito Sans", sans-serif;
+  --font-titoli: "Poppins", sans-serif;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font-family: var(--font); background: var(--crema); color: var(--testo); padding-bottom: 40px; }
+h1, h2, h3 { font-family: var(--font-titoli); margin: 0 0 8px; }
+button { font-family: inherit; cursor: pointer; }
+
+#schermata-login-staff { min-height: 100vh; display: flex; align-items: center; justify-content: center; background: var(--nero); padding: 20px; }
+.login-box-staff { background: white; border-radius: 18px; padding: 34px 26px; max-width: 360px; width: 100%; text-align: center; }
+.login-box-staff input { width: 100%; padding: 12px; border-radius: 10px; border: 1px solid var(--bordo); margin: 14px 0 8px; font-size: 1.1rem; text-align: center; letter-spacing: 2px; }
+.login-box-staff button { width: 100%; padding: 12px; border: none; border-radius: 999px; background: var(--arancio); color: white; font-weight: 800; }
+.login-errore-staff { color: var(--rosso); font-size: 0.85rem; min-height: 20px; }
+
+header.staff-header { background: var(--nero); color: white; padding: 14px 18px; font-weight: 700; font-family: var(--font-titoli); position: sticky; top: 0; z-index: 10; }
+
+#app-staff { display: none; max-width: 640px; margin: 0 auto; padding: 16px; }
+#app-staff.attivo { display: block; }
+
+.staff-search-box { position: sticky; top: 52px; background: var(--crema); z-index: 9; padding: 10px 0; }
+.staff-search-box input {
+  width: 100%; padding: 14px 16px; border-radius: 999px; border: 1px solid var(--bordo); font-size: 1rem;
+  background: white;
+}
+
+.reparto-titolo { font-weight: 800; font-size: 0.85rem; text-transform: uppercase; opacity: 0.6; margin: 18px 0 8px; }
+.materia-riga {
+  display: flex; align-items: center; justify-content: space-between; gap: 10px;
+  background: white; border: 1px solid var(--bordo); border-radius: 10px; padding: 10px 14px; margin-bottom: 8px;
+}
+.materia-riga .nome { font-weight: 700; }
+.materia-riga .um { font-size: 0.78rem; opacity: 0.6; }
+.materia-riga button {
+  background: var(--nero); color: white; border: none; border-radius: 50%; width: 34px; height: 34px; font-size: 1.1rem;
+}
+
+.richiesta-flottante {
+  position: fixed; bottom: 16px; left: 16px; right: 16px; max-width: 608px; margin: 0 auto;
+  background: var(--nero); color: white; border-radius: 16px; padding: 14px 18px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  display: none; z-index: 20;
+}
+.richiesta-flottante.visibile { display: block; }
+.richiesta-flottante-top { display: flex; justify-content: space-between; align-items: center; font-weight: 700; }
+.richiesta-flottante button.apri { background: var(--arancio); color: white; border: none; padding: 8px 16px; border-radius: 999px; font-weight: 800; }
+
+.overlay-staff { position: fixed; inset: 0; background: rgba(0,0,0,0.55); z-index: 50; display: none; align-items: flex-end; justify-content: center; }
+.overlay-staff.aperto { display: flex; }
+.pannello-staff { background: var(--crema); width: 100%; max-width: 640px; max-height: 88vh; overflow-y: auto; border-radius: 20px 20px 0 0; padding: 20px; }
+
+.riga-richiesta { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--bordo); padding: 10px 0; gap: 8px; }
+.riga-richiesta .qta-controlli { display: flex; align-items: center; gap: 8px; }
+.riga-richiesta .qta-controlli button { width: 30px; height: 30px; border-radius: 50%; border: 1px solid var(--bordo); background: white; }
+
+.form-staff input, .form-staff textarea { width: 100%; padding: 10px 12px; border-radius: 8px; border: 1px solid var(--bordo); margin-bottom: 10px; font-family: inherit; }
+.btn-invia-staff { width: 100%; padding: 14px; border: none; border-radius: 999px; background: var(--arancio); color: white; font-weight: 800; font-size: 1rem; }
+
+.vuoto-staff { text-align: center; opacity: 0.5; padding: 30px; }
+.toast-staff {
+  position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: var(--nero); color: white;
+  padding: 12px 22px; border-radius: 999px; font-weight: 700; font-size: 0.9rem; z-index: 200; opacity: 0; pointer-events: none; transition: opacity 0.25s;
+}
+.toast-staff.visibile { opacity: 1; }

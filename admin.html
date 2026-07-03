@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard Admin | Chapeau Burger</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="images/favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+<!-- ===================== LOGIN ===================== -->
+<div id="schermata-login">
+  <div class="login-box">
+    <img src="images/logo.png" alt="Chapeau Burger">
+    <h2>Area Riservata</h2>
+    <p style="opacity:0.6; font-size:0.85rem;">Accedi alla dashboard gestionale</p>
+    <form id="form-login">
+      <input type="password" id="login-password" placeholder="Password" autocomplete="current-password" required>
+      <div class="login-errore" id="login-errore"></div>
+      <button type="submit">Accedi</button>
+    </form>
+  </div>
+</div>
+
+<!-- ===================== APP ===================== -->
+<div id="app">
+  <header class="admin-header">
+    <div class="admin-header-brand"><img src="images/logo.png" alt=""> Chapeau Burger — Gestione</div>
+    <div class="admin-header-azioni">
+      <span id="notifica-audio-avviso" style="font-size:0.8rem; opacity:0.7;"></span>
+      <button class="btn-logout" id="btn-logout"><i class="fa-solid fa-arrow-right-from-bracket"></i> Esci</button>
+    </div>
+  </header>
+
+  <nav class="admin-nav" id="admin-nav">
+    <button data-sezione="ordini" class="attivo"><i class="fa-solid fa-receipt"></i> Ordini</button>
+    <button data-sezione="cucina"><i class="fa-solid fa-kitchen-set"></i> Cucina</button>
+    <button data-sezione="menu"><i class="fa-solid fa-book-open"></i> Menù</button>
+    <button data-sezione="clienti"><i class="fa-solid fa-users"></i> Clienti</button>
+    <button data-sezione="promo"><i class="fa-solid fa-tags"></i> Promo</button>
+    <button data-sezione="magazzino" id="nav-magazzino" style="display:none;"><i class="fa-solid fa-boxes-stacked"></i> Magazzino <span class="badge-nav" id="badge-magazzino" style="display:none;">0</span></button>
+    <button data-sezione="impostazioni"><i class="fa-solid fa-gear"></i> Impostazioni</button>
+  </nav>
+
+  <main class="admin-content">
+
+    <!-- ================= ORDINI ================= -->
+    <section class="sezione-admin attiva" id="sezione-ordini">
+      <div class="card-header">
+        <h2>Ordini</h2>
+        <button class="btn btn-primario" id="btn-nuovo-ordine-manuale"><i class="fa-solid fa-plus"></i> Nuovo ordine manuale</button>
+      </div>
+      <div class="filtri-chip" id="filtri-ordini">
+        <button data-stato="" class="attivo">Tutti</button>
+        <button data-stato="nuovo">Nuovi</button>
+        <button data-stato="in_preparazione">In preparazione</button>
+        <button data-stato="pronto">Pronti</button>
+        <button data-stato="consegnato">Consegnati</button>
+        <button data-stato="annullato">Annullati</button>
+      </div>
+      <div class="card">
+        <div class="tabella-scroll">
+          <table>
+            <thead><tr><th>#</th><th>Cliente</th><th>Tipo</th><th>Totale</th><th>Stato</th><th>Ricevuto</th><th></th></tr></thead>
+            <tbody id="tabella-ordini"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CUCINA ================= -->
+    <section class="sezione-admin" id="sezione-cucina">
+      <h2>Cucina</h2>
+      <div class="filtri-chip" id="filtri-cucina">
+        <button data-stato="nuovo" class="attivo">Nuovi</button>
+        <button data-stato="in_preparazione">In preparazione</button>
+        <button data-stato="pronto">Pronti</button>
+      </div>
+      <div id="lista-cucina"></div>
+    </section>
+
+    <!-- ================= MENU ================= -->
+    <section class="sezione-admin" id="sezione-menu">
+      <div class="card-header">
+        <h2>Menù</h2>
+        <div style="display:flex; gap:8px; flex-wrap:wrap;">
+          <button class="btn btn-secondario" id="btn-diagnosi"><i class="fa-solid fa-stethoscope"></i> Auto-diagnosi e ripristino</button>
+          <button class="btn btn-secondario" id="btn-nuova-categoria"><i class="fa-solid fa-folder-plus"></i> Nuova categoria</button>
+          <button class="btn btn-primario" id="btn-nuovo-prodotto"><i class="fa-solid fa-plus"></i> Nuovo prodotto</button>
+        </div>
+      </div>
+      <div id="lista-categorie-menu"></div>
+    </section>
+
+    <!-- ================= CLIENTI ================= -->
+    <section class="sezione-admin" id="sezione-clienti">
+      <h2>Clienti</h2>
+      <div class="card">
+        <div class="tabella-scroll">
+          <table>
+            <thead><tr><th>Nome</th><th>Telefono</th><th>Ordini</th><th>Speso totale</th><th></th></tr></thead>
+            <tbody id="tabella-clienti"></tbody>
+          </table>
+        </div>
+      </div>
+      <div id="dettaglio-cliente"></div>
+    </section>
+
+    <!-- ================= PROMO ================= -->
+    <section class="sezione-admin" id="sezione-promo">
+      <div class="card-header">
+        <h2>Codici Sconto</h2>
+        <button class="btn btn-primario" id="btn-nuovo-promo"><i class="fa-solid fa-plus"></i> Nuovo codice</button>
+      </div>
+      <div class="card">
+        <div class="tabella-scroll">
+          <table>
+            <thead><tr><th>Codice</th><th>Tipo</th><th>Valore</th><th>Min. ordine</th><th>Scadenza</th><th>Attivo</th><th></th></tr></thead>
+            <tbody id="tabella-promo"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= MAGAZZINO (incorporato da admin-magazzino.html) ================= -->
+    <section class="sezione-admin" id="sezione-magazzino">
+      <div id="contenitore-magazzino">Caricamento modulo magazzino...</div>
+    </section>
+
+    <!-- ================= IMPOSTAZIONI ================= -->
+    <section class="sezione-admin" id="sezione-impostazioni">
+      <h2>Impostazioni</h2>
+      <div class="card">
+        <form id="form-impostazioni" class="form-grid due-col">
+          <div><label>Nome locale</label><input name="nome_locale"></div>
+          <div><label>Città</label><input name="citta"></div>
+          <div><label>Indirizzo</label><input name="indirizzo"></div>
+          <div><label>Link Google Maps</label><input name="maps_link"></div>
+          <div><label>WhatsApp ordini (solo numero, es. 393331234567)</label><input name="whatsapp_ordini"></div>
+          <div><label>Instagram</label><input name="instagram"></div>
+          <div><label>Facebook</label><input name="facebook"></div>
+          <div style="grid-column:1/-1;"><label>Testo banner promo</label><input name="banner_testo"></div>
+          <div><label>Orario lunedì</label><input name="orario_lun"></div>
+          <div><label>Orario martedì</label><input name="orario_mar"></div>
+          <div><label>Orario mercoledì</label><input name="orario_mer"></div>
+          <div><label>Orario giovedì</label><input name="orario_gio"></div>
+          <div><label>Orario venerdì</label><input name="orario_ven"></div>
+          <div><label>Orario sabato</label><input name="orario_sab"></div>
+          <div><label>Orario domenica</label><input name="orario_dom"></div>
+          <div style="display:flex; align-items:center; gap:8px;"><input type="checkbox" name="magazzino_attivo" id="check-magazzino-attivo" style="width:auto;"><label for="check-magazzino-attivo" style="margin:0;">Modulo Magazzino attivo</label></div>
+          <div style="grid-column:1/-1;"><button type="submit" class="btn btn-primario">Salva impostazioni</button></div>
+        </form>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<!-- ===================== MODALI CONDIVISI ===================== -->
+<div class="modal-overlay" id="modal-generico">
+  <div class="modal-box" id="modal-generico-contenuto"></div>
+</div>
+
+<div class="toast-admin" id="toast-admin"></div>
+<audio id="audio-notifica" preload="auto">
+  <source src="data:audio/wav;base64,UklGRoQJAABXQVZFZm10IBAAAAABAAEAQB8AAIA+AAACABAAZGF0YWAJAAAAAHkYtyWmISIOI/SV3+jZt+WX/ZEWMSW+IlkQdPbw4K7ZA+Qw+5MUhCSzI38Sz/hq4prZauLP+H8SsyOEJJMUMPsD5K7Z8OB09lkQviIxJZEWl/235ejZld8j9CIOpiG3JXkYAACH50naWt7e8d0LayAYJkkaaQJv6c/aQt2n74wJEB9SJv0b0ARt63zbTdyB7TEHlh1mJpYdMQeB7U3cfNtt69AE/RtSJhAfjAmn70Ldz9pv6WkCSRoYJmsg3Qve8VreSdqH5wAAeRi3JaYhIg4j9JXf6Nm35Zf9kRYxJb4iWRB09vDgrtkD5DD7kxSEJLMjfxLP+Grimtlq4s/4fxKzI4QkkxQw+wPkrtnw4HT2WRC+IjElkRaX/bfl6NmV3yP0Ig6mIbcleRgAAIfnSdpa3t7x3QtrIBgmSRppAm/pz9pC3afvjAkQH1Im/RvQBG3rfNtN3IHtMQeWHWYmlh0xB4HtTdx8223r0AT9G1ImEB+MCafvQt3P2m/paQJJGhgmayDdC97xWt5J2ofnAAB5GLclpiEiDiP0ld/o2bfll/2RFjElviJZEHT28OCu2QPkMPuTFIQksyN/Es/4auKa2Wriz/h/ErMjhCSTFDD7A+Su2fDgdPZZEL4iMSWRFpf9t+Xo2ZXfI/QiDqYhtyV5GAAAh+dJ2lre3vHdC2sgGCZJGmkCb+nP2kLdp++MCRAfUib9G9AEbet8203cge0xB5YdZiaWHTEHge1N3HzbbevQBP0bUiYQH4wJp+9C3c/ab+lpAkkaGCZrIN0L3vFa3knah+cAAHkYtyWmISIOI/SV3+jZt+WX/ZEWMSW+IlkQdPbw4K7ZA+Qw+5MUhCSzI38Sz/hq4prZauLP+H8SsyOEJJMUMPsD5K7Z8OB09lkQviIxJZEWl/235ejZld8j9CIOpiG3JXkYAACH50naWt7e8d0LayAYJkkaaQJv6c/aQt2n74wJEB9SJv0b0ARt63zbTdyB7TEHlh1mJpYdMQeB7U3cfNtt69AE/RtSJhAfjAmn70Ldz9pv6WkCSRoYJmsg3Qve8VreSdqH5wAAeRi3JaYhIg4j9JXf6Nm35Zf9kRYxJb4iWRB09vDgrtkD5DD7kxSEJLMjfxLP+Grimtlq4s/4fxKzI4QkkxQw+wPkrtnw4HT2WRC+IjElkRaX/bfl6NmV3yP0Ig6mIbcleRgAAIfnSdpa3t7x3QtrIBgmSRppAm/pz9pC3afvjAkQH1Im/RvQBG3rfNtN3IHtMQeWHWYmlh0xB4HtTdx8223r0AT9G1ImEB+MCafvQt3P2m/paQJJGhgmayDdC97xWt5J2ofnAAB5GLclpiEiDiP0ld/o2bfll/2RFjElviJZEHT28OCu2QPkMPuTFIQksyN/Es/4auKa2Wriz/h/ErMjhCSTFDD7A+Su2fDgdPZZEL4iMSWRFpf9t+Xo2ZXfI/QiDqYhtyV5GAAAh+dJ2lre3vHdC2sgGCZJGmkCb+nP2kLdp++MCRAfUib9G9AEbet8203cge0xB5YdZiaWHTEHge1N3HzbbevQBP0bUiYQH4wJp+9C3c/ab+lpAkkaGCZrIN0L3vFa3knah+cAAHkYtyWmISIOI/SV3+jZt+WX/ZEWMSW+IlkQdPbw4K7ZA+Qw+5MUhCSzI38Sz/hq4prZauLP+H8SsyOEJJMUMPsD5K7Z8OB09lkQviIxJZEWl/235ejZld8j9CIOpiG3JXkYAACH50naWt7e8d0LayAYJkkaaQJv6c/aQt2n74wJEB9SJv0b0ARt63zbTdyB7TEHlh1mJpYdMQeB7U3cfNtt69AE/RtSJhAfjAmn70Ldz9pv6WkCSRoYJmsg3Qve8VreSdqH5wAAeRi3JaYhIg4j9JXf6Nm35Zf9kRYxJb4iWRB09vDgrtkD5DD7kxSEJLMjfxLP+Grimtlq4s/4fxKzI4QkkxQw+wPkrtnw4HT2WRC+IjElkRaX/bfl6NmV3yP0Ig6mIbcleRgAAIfnSdpa3t7x3QtrIBgmSRppAm/pz9pC3afvjAkQH1Im/RvQBG3rfNtN3IHtMQeWHWYmlh0xB4HtTdx8223r0AT9G1ImEB+MCafvQt3P2m/paQJJGhgmayDdC97xWt5J2ofnAAB5GLclpiEiDiP0ld/o2bfll/2RFjElviJZEHT28OCu2QPkMPuTFIQksyN/Es/4auKa2Wriz/h/ErMjhCSTFDD7A+Su2fDgdPZZEL4iMSWRFpf9t+Xo2ZXfI/QiDqYhtyV5GAAAh+dJ2lre3vHdC2sgGCZJGmkCb+nP2kLdp++MCRAfUib9G9AEbet8203cge0xB5YdZiaWHTEHge1N3HzbbevQBP0bUiYQH4wJp+9C3c/ab+lpAkkaGCZrIN0L3vFa3knah+c=" type="audio/wav">
+</audio>
+
+<script src="js/admin.js"></script>
+<script src="js/admin-magazzino.js"></script>
+</body>
+</html>

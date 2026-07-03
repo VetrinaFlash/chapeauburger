@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Richiesta Magazzino | Chapeau Burger</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="images/favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="css/staff.css">
+</head>
+<body>
+
+<div id="schermata-login-staff">
+  <div class="login-box-staff">
+    <h2>Richiesta Magazzino</h2>
+    <p style="opacity:0.6; font-size:0.85rem;">Inserisci il codice staff per segnalare cosa manca</p>
+    <form id="form-login-staff">
+      <input type="password" id="input-codice-staff" placeholder="Codice staff" inputmode="numeric" required>
+      <div class="login-errore-staff" id="login-errore-staff"></div>
+      <button type="submit">Entra</button>
+    </form>
+  </div>
+</div>
+
+<header class="staff-header">🎩 Chapeau Burger — Richiesta Magazzino</header>
+
+<div id="app-staff">
+  <div class="staff-search-box">
+    <input type="text" id="input-ricerca" placeholder="Cerca un prodotto da riordinare..." autocomplete="off">
+  </div>
+  <div id="risultati-ricerca"></div>
+</div>
+
+<div class="richiesta-flottante" id="richiesta-flottante">
+  <div class="richiesta-flottante-top">
+    <span><span id="contatore-richiesta">0</span> prodotti selezionati</span>
+    <button class="apri" id="btn-apri-richiesta">Vedi richiesta</button>
+  </div>
+</div>
+
+<div class="overlay-staff" id="overlay-richiesta">
+  <div class="pannello-staff">
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+      <h2>La tua richiesta</h2>
+      <button id="btn-chiudi-richiesta" style="background:none;border:none;font-size:1.3rem;"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div id="lista-richiesta"></div>
+    <form id="form-invia-richiesta" class="form-staff" style="margin-top:16px;">
+      <input type="text" id="input-nome-staff" placeholder="Il tuo nome">
+      <textarea id="input-note-staff" rows="2" placeholder="Note (opzionale)"></textarea>
+      <button type="submit" class="btn-invia-staff"><i class="fa-solid fa-paper-plane"></i> Invia richiesta all'admin</button>
+    </form>
+  </div>
+</div>
+
+<div class="toast-staff" id="toast-staff"></div>
+
+<script src="js/staff.js"></script>
+</body>
+</html>

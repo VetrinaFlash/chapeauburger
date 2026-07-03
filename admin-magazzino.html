@@ -1,0 +1,69 @@
+<!-- Frammento incorporato in admin.html dentro #contenitore-magazzino (fetch + injection, non è una pagina a sé stante) -->
+<div class="card-header">
+  <h2>Magazzino</h2>
+</div>
+
+<div class="admin-nav" id="magazzino-sub-nav" style="position:static; padding:0 0 14px;">
+  <button data-tab="ordini-staff" class="attivo"><i class="fa-solid fa-clipboard-list"></i> Ordini staff <span class="badge-nav" id="badge-magazzino-interno" style="display:none;">0</span></button>
+  <button data-tab="fornitori"><i class="fa-solid fa-truck"></i> Fornitori</button>
+  <button data-tab="materie-prime"><i class="fa-solid fa-carrot"></i> Materie prime</button>
+  <button data-tab="contabilita"><i class="fa-solid fa-chart-column"></i> Contabilità</button>
+</div>
+
+<!-- ORDINI STAFF -->
+<div class="magazzino-tab" id="magazzino-tab-ordini-staff">
+  <div class="filtri-chip" id="magazzino-filtri-ordini">
+    <button data-stato="" class="attivo">Tutti</button>
+    <button data-stato="nuovo">Nuovi</button>
+    <button data-stato="inviato">Inviati</button>
+    <button data-stato="completato">Completati</button>
+  </div>
+  <div id="magazzino-lista-ordini"></div>
+</div>
+
+<!-- FORNITORI -->
+<div class="magazzino-tab" id="magazzino-tab-fornitori" style="display:none;">
+  <div class="card-header">
+    <h3>Fornitori</h3>
+    <button class="btn btn-primario btn-piccolo" id="btn-nuovo-fornitore"><i class="fa-solid fa-plus"></i> Nuovo fornitore</button>
+  </div>
+  <div class="card">
+    <div class="tabella-scroll">
+      <table>
+        <thead><tr><th>Nome</th><th>Reparto</th><th>WhatsApp</th><th>Attivo</th><th></th></tr></thead>
+        <tbody id="tabella-fornitori"></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- MATERIE PRIME -->
+<div class="magazzino-tab" id="magazzino-tab-materie-prime" style="display:none;">
+  <div class="card-header">
+    <h3>Materie prime</h3>
+    <button class="btn btn-primario btn-piccolo" id="btn-nuova-materia"><i class="fa-solid fa-plus"></i> Nuova materia prima</button>
+  </div>
+  <div class="card">
+    <div class="tabella-scroll">
+      <table>
+        <thead><tr><th>Nome</th><th>Reparto</th><th>U.M.</th><th>Prezzo rif.</th><th>Attivo</th><th></th></tr></thead>
+        <tbody id="tabella-materie-prime"></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- CONTABILITA -->
+<div class="magazzino-tab" id="magazzino-tab-contabilita" style="display:none;">
+  <h3>Spesa per reparto/fornitore</h3>
+  <div class="kpi-grid" id="report-per-reparto"></div>
+
+  <h3>Spesa per settimana</h3>
+  <div class="card"><div class="tabella-scroll"><table><thead><tr><th>Settimana</th><th>Totale</th></tr></thead><tbody id="report-per-settimana"></tbody></table></div></div>
+
+  <h3 style="margin-top:18px;">Spesa per mese</h3>
+  <div class="card"><div class="tabella-scroll"><table><thead><tr><th>Mese</th><th>Totale</th></tr></thead><tbody id="report-per-mese"></tbody></table></div></div>
+
+  <h3 style="margin-top:18px;">Spesa per singolo ordine</h3>
+  <div class="card"><div class="tabella-scroll"><table><thead><tr><th>Ordine</th><th>Data</th><th>Stato</th><th>Totale</th></tr></thead><tbody id="report-per-ordine"></tbody></table></div></div>
+</div>
