@@ -3,7 +3,7 @@
 
   const CATEGORIE_SENZA_RIMOZIONE = ["vini", "birre", "bevande", "pizze-dessert"];
   const CHIAVE_CARRELLO = "cb_carrello";
-  const WHATSAPP_ORDINI = "390000000000";
+  const WHATSAPP_ORDINI = "393791291539";
 
   const stato = {
     catalogo: { categorie: [] },

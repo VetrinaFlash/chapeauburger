@@ -144,10 +144,10 @@ CREATE TABLE magazzino_ordini_items (
 -- ============================================================================
 INSERT INTO impostazioni (chiave, valore) VALUES
   ('nome_locale', 'Pizzeria Lievito Reale'),
-  ('citta', ''),
-  ('indirizzo', 'Indirizzo da confermare'),
-  ('maps_link', 'https://www.google.com/maps/search/?api=1&query=Pizzeria+Lievito+Reale'),
-  ('whatsapp_ordini', '390000000000'),
+  ('citta', 'Casagiove (CE)'),
+  ('indirizzo', 'Via Nazionale Appia, 5A, 81022 Casagiove (CE)'),
+  ('maps_link', 'https://www.google.com/maps/search/?api=1&query=Via+Nazionale+Appia+5A+81022+Casagiove+CE'),
+  ('whatsapp_ordini', '393791291539'),
   ('instagram', 'https://www.instagram.com/lievitoreale'),
   ('facebook', ''),
   ('banner_testo', '👑 Sconto 10% sul primo ordine online! Scrivi ''BENVENUTO'' nella nota dell''ordine su WhatsApp'),
