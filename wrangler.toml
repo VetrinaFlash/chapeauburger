@@ -5,7 +5,7 @@ pages_build_output_dir = "."
 [[d1_databases]]
 binding = "DB"
 database_name = "lievito-reale-db"
-database_id = "8e114051-2e7a-4e63-be90-0b7c898c70e9"
+database_id = "322fa892-e882-4258-b784-36fe07d7892e"
 
 # Variabili d'ambiente da configurare in Cloudflare Pages (Settings > Environment variables),
 # MAI in chiaro qui nel repo:
