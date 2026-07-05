@@ -1,16 +1,16 @@
 :root {
-  --nero: #1a1512;
-  --crema: #fdf8f0;
-  --crema-2: #f5ecdb;
-  --arancio: #e87b1e;
-  --arancio-scuro: #c85f0f;
-  --rosso: #d1322f;
-  --testo: #2b241c;
+  --nero: #14100d;
+  --crema: #faf5ea;
+  --crema-2: #efe1c4;
+  --oro: #bf9a5f;
+  --oro-scuro: #96733f;
+  --rosso: #7a1620;
+  --testo: #241f19;
   --bianco: #ffffff;
-  --bordo: #e5dcc9;
+  --bordo: #e6d9b8;
   --radius: 14px;
   --font: "Nunito Sans", sans-serif;
-  --font-titoli: "Poppins", sans-serif;
+  --font-titoli: "Playfair Display", serif;
 }
 * { box-sizing: border-box; }
 body { margin: 0; font-family: var(--font); background: var(--crema); color: var(--testo); padding-bottom: 40px; }
@@ -20,7 +20,7 @@ button { font-family: inherit; cursor: pointer; }
 #schermata-login-staff { min-height: 100vh; display: flex; align-items: center; justify-content: center; background: var(--nero); padding: 20px; }
 .login-box-staff { background: white; border-radius: 18px; padding: 34px 26px; max-width: 360px; width: 100%; text-align: center; }
 .login-box-staff input { width: 100%; padding: 12px; border-radius: 10px; border: 1px solid var(--bordo); margin: 14px 0 8px; font-size: 1.1rem; text-align: center; letter-spacing: 2px; }
-.login-box-staff button { width: 100%; padding: 12px; border: none; border-radius: 999px; background: var(--arancio); color: white; font-weight: 800; }
+.login-box-staff button { width: 100%; padding: 12px; border: none; border-radius: 999px; background: var(--oro); color: var(--nero); font-weight: 800; }
 .login-errore-staff { color: var(--rosso); font-size: 0.85rem; min-height: 20px; }
 
 header.staff-header { background: var(--nero); color: white; padding: 14px 18px; font-weight: 700; font-family: var(--font-titoli); position: sticky; top: 0; z-index: 10; }
@@ -52,7 +52,7 @@ header.staff-header { background: var(--nero); color: white; padding: 14px 18px;
 }
 .richiesta-flottante.visibile { display: block; }
 .richiesta-flottante-top { display: flex; justify-content: space-between; align-items: center; font-weight: 700; }
-.richiesta-flottante button.apri { background: var(--arancio); color: white; border: none; padding: 8px 16px; border-radius: 999px; font-weight: 800; }
+.richiesta-flottante button.apri { background: var(--oro); color: var(--nero); border: none; padding: 8px 16px; border-radius: 999px; font-weight: 800; }
 
 .overlay-staff { position: fixed; inset: 0; background: rgba(0,0,0,0.55); z-index: 50; display: none; align-items: flex-end; justify-content: center; }
 .overlay-staff.aperto { display: flex; }
@@ -63,7 +63,7 @@ header.staff-header { background: var(--nero); color: white; padding: 14px 18px;
 .riga-richiesta .qta-controlli button { width: 30px; height: 30px; border-radius: 50%; border: 1px solid var(--bordo); background: white; }
 
 .form-staff input, .form-staff textarea { width: 100%; padding: 10px 12px; border-radius: 8px; border: 1px solid var(--bordo); margin-bottom: 10px; font-family: inherit; }
-.btn-invia-staff { width: 100%; padding: 14px; border: none; border-radius: 999px; background: var(--arancio); color: white; font-weight: 800; font-size: 1rem; }
+.btn-invia-staff { width: 100%; padding: 14px; border: none; border-radius: 999px; background: var(--oro); color: var(--nero); font-weight: 800; font-size: 1rem; }
 
 .vuoto-staff { text-align: center; opacity: 0.5; padding: 30px; }
 .toast-staff {

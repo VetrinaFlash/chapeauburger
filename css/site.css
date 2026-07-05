@@ -1,16 +1,16 @@
 :root {
-  --nero: #1a1512;
-  --nero-2: #221c17;
-  --crema: #fdf8f0;
-  --crema-2: #f5ecdb;
-  --arancio: #e87b1e;
-  --arancio-scuro: #c85f0f;
-  --rosso: #d1322f;
-  --testo: #2b241c;
+  --nero: #14100d;
+  --nero-2: #1c1712;
+  --crema: #faf5ea;
+  --crema-2: #efe1c4;
+  --oro: #bf9a5f;
+  --oro-scuro: #96733f;
+  --rosso: #7a1620;
+  --testo: #241f19;
   --bianco: #ffffff;
-  --ombra: 0 10px 30px rgba(26, 21, 18, 0.15);
+  --ombra: 0 10px 30px rgba(20, 16, 13, 0.15);
   --radius: 16px;
-  --font-titoli: "Poppins", sans-serif;
+  --font-titoli: "Playfair Display", serif;
   --font-testo: "Nunito Sans", sans-serif;
 }
 
@@ -60,21 +60,21 @@ h1, h2, h3, h4 { font-family: var(--font-titoli); margin: 0 0 0.5em; line-height
   padding-bottom: 12px;
 }
 .topbar-brand { display: flex; align-items: center; gap: 12px; font-family: var(--font-titoli); font-weight: 700; font-size: 1.2rem; }
-.topbar-brand img { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; background: var(--crema); }
+.topbar-brand img { height: 48px; width: auto; object-fit: contain; }
 .topbar-nav { display: none; gap: 24px; align-items: center; }
 .topbar-nav a { font-weight: 600; font-size: 0.95rem; opacity: 0.9; }
-.topbar-nav a:hover { color: var(--arancio); opacity: 1; }
+.topbar-nav a:hover { color: var(--oro); opacity: 1; }
 .cta-btn {
-  background: var(--arancio);
-  color: var(--bianco);
+  background: var(--oro);
+  color: var(--nero);
   font-weight: 700;
   padding: 10px 22px;
   border-radius: 999px;
   font-size: 0.95rem;
-  box-shadow: 0 4px 14px rgba(232, 123, 30, 0.4);
+  box-shadow: 0 4px 14px rgba(191, 154, 95, 0.4);
   white-space: nowrap;
 }
-.cta-btn:hover { background: var(--arancio-scuro); }
+.cta-btn:hover { background: var(--oro-scuro); }
 .menu-toggle { display: block; background: none; border: none; color: var(--crema); font-size: 1.4rem; cursor: pointer; }
 
 @media (min-width: 880px) {
@@ -114,8 +114,8 @@ h1, h2, h3, h4 { font-family: var(--font-titoli); margin: 0 0 0.5em; line-height
   font-weight: 700;
   font-size: 1rem;
 }
-.btn-primario { background: var(--arancio); color: var(--bianco); box-shadow: 0 6px 18px rgba(232,123,30,0.45); }
-.btn-primario:hover { background: var(--arancio-scuro); }
+.btn-primario { background: var(--oro); color: var(--nero); box-shadow: 0 6px 18px rgba(191,154,95,0.45); }
+.btn-primario:hover { background: var(--oro-scuro); color: var(--bianco); }
 .btn-secondario { background: #25d366; color: var(--bianco); }
 .btn-secondario:hover { filter: brightness(0.92); }
 .hero-orari {
@@ -130,13 +130,13 @@ h1, h2, h3, h4 { font-family: var(--font-titoli); margin: 0 0 0.5em; line-height
   justify-content: center;
   box-shadow: var(--ombra);
 }
-.hero-orari strong { color: var(--arancio-scuro); }
+.hero-orari strong { color: var(--oro-scuro); }
 
 /* Sezioni generiche */
 section { padding: 64px 0; }
 .section-titolo { text-align: center; margin-bottom: 40px; }
 .section-titolo .eyebrow {
-  color: var(--arancio-scuro);
+  color: var(--oro-scuro);
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -146,7 +146,7 @@ section { padding: 64px 0; }
 
 /* Filosofia (banda scura) */
 .filosofia { background: var(--nero); color: var(--crema); }
-.filosofia .section-titolo .eyebrow { color: var(--arancio); }
+.filosofia .section-titolo .eyebrow { color: var(--oro); }
 .filosofia-grid { display: grid; gap: 24px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
 .filosofia-card {
   background: var(--nero-2);
@@ -155,12 +155,12 @@ section { padding: 64px 0; }
   padding: 28px 24px;
   text-align: center;
 }
-.filosofia-card i { font-size: 1.8rem; color: var(--arancio); margin-bottom: 14px; }
+.filosofia-card i { font-size: 1.8rem; color: var(--oro); margin-bottom: 14px; }
 .filosofia-card h3 { font-size: 1.1rem; }
 .filosofia-card p { opacity: 0.85; font-size: 0.95rem; margin: 0; }
 .contatti-rapidi { display: flex; flex-wrap: wrap; justify-content: center; gap: 26px; margin-top: 40px; font-weight: 600; }
 .contatti-rapidi a { display: flex; align-items: center; gap: 8px; }
-.contatti-rapidi i { color: var(--arancio); }
+.contatti-rapidi i { color: var(--oro); }
 
 /* Gallery piatti */
 .gallery-grid { display: grid; gap: 24px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
@@ -180,19 +180,19 @@ section { padding: 64px 0; }
 @media (min-width: 880px) { .dove-siamo-grid { grid-template-columns: 1fr 1fr; } }
 .dove-info { background: var(--bianco); border-radius: var(--radius); padding: 30px; box-shadow: var(--ombra); }
 .dove-info p { display: flex; gap: 10px; align-items: flex-start; }
-.dove-info i { color: var(--arancio-scuro); width: 20px; margin-top: 4px; }
+.dove-info i { color: var(--oro-scuro); width: 20px; margin-top: 4px; }
 .dove-siamo iframe { width: 100%; height: 100%; min-height: 300px; border: 0; border-radius: var(--radius); }
 
 /* Footer */
 footer { background: var(--nero); color: var(--crema); padding: 48px 0 24px; }
 .footer-grid { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 30px; margin-bottom: 30px; }
 .footer-brand { display: flex; align-items: center; gap: 12px; font-family: var(--font-titoli); font-weight: 700; font-size: 1.2rem; }
-.footer-brand img { width: 42px; height: 42px; border-radius: 50%; background: var(--crema); }
+.footer-brand img { height: 46px; width: auto; object-fit: contain; }
 .footer-orari p { margin: 2px 0; font-size: 0.9rem; opacity: 0.85; }
 .footer-social { display: flex; gap: 14px; }
 .footer-social a {
   width: 40px; height: 40px; border-radius: 50%; background: rgba(255,255,255,0.08);
   display: flex; align-items: center; justify-content: center; font-size: 1.1rem;
 }
-.footer-social a:hover { background: var(--arancio); }
+.footer-social a:hover { background: var(--oro); color: var(--nero); }
 .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 18px; text-align: center; font-size: 0.85rem; opacity: 0.7; }

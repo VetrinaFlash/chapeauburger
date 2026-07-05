@@ -1,17 +1,17 @@
 :root {
-  --nero: #1a1512;
-  --crema: #fdf8f0;
-  --crema-2: #f5ecdb;
-  --arancio: #e87b1e;
-  --arancio-scuro: #c85f0f;
-  --rosso: #d1322f;
+  --nero: #14100d;
+  --crema: #faf5ea;
+  --crema-2: #efe1c4;
+  --oro: #bf9a5f;
+  --oro-scuro: #96733f;
+  --rosso: #7a1620;
   --verde: #2fa84f;
-  --testo: #2b241c;
+  --testo: #241f19;
   --bianco: #ffffff;
-  --bordo: #e8ddc8;
-  --ombra: 0 8px 24px rgba(26, 21, 18, 0.12);
+  --bordo: #e6d9b8;
+  --ombra: 0 8px 24px rgba(20, 16, 13, 0.12);
   --radius: 14px;
-  --font-titoli: "Poppins", sans-serif;
+  --font-titoli: "Playfair Display", serif;
   --font-testo: "Nunito Sans", sans-serif;
 }
 * { box-sizing: border-box; }
@@ -34,10 +34,10 @@ a { color: inherit; text-decoration: none; }
   display: flex; align-items: center; justify-content: space-between; gap: 12px;
 }
 .menu-topbar-brand { display: flex; align-items: center; gap: 10px; font-weight: 700; }
-.menu-topbar-brand img { width: 36px; height: 36px; border-radius: 50%; background: var(--crema); }
+.menu-topbar-brand img { height: 40px; width: auto; object-fit: contain; }
 .menu-topbar-brand a { color: inherit; text-decoration: none; }
 .btn-carrello {
-  position: relative; background: var(--arancio); color: var(--bianco); border: none;
+  position: relative; background: var(--oro); color: var(--nero); border: none;
   padding: 10px 16px; border-radius: 999px; font-weight: 700; font-size: 0.95rem;
   display: flex; align-items: center; gap: 8px;
 }
@@ -59,7 +59,7 @@ a { color: inherit; text-decoration: none; }
   padding: 8px 16px; border-radius: 999px; font-weight: 700; font-size: 0.88rem;
   white-space: nowrap; display: flex; align-items: center; gap: 6px;
 }
-.tab-categoria.attiva { background: var(--arancio); border-color: var(--arancio); color: white; }
+.tab-categoria.attiva { background: var(--oro); border-color: var(--oro); color: var(--nero); }
 
 .menu-container { max-width: 900px; margin: 0 auto; padding: 20px 16px 40px; }
 .categoria-sezione { margin-bottom: 34px; }
@@ -76,7 +76,7 @@ a { color: inherit; text-decoration: none; }
 .prodotto-card-info { flex: 1; min-width: 0; }
 .prodotto-card-info h3 { font-size: 1rem; margin-bottom: 4px; }
 .prodotto-card-info p { margin: 0 0 8px; font-size: 0.85rem; opacity: 0.7; }
-.prodotto-prezzo { font-weight: 800; color: var(--arancio-scuro); }
+.prodotto-prezzo { font-weight: 800; color: var(--oro-scuro); }
 .prodotto-prezzo .da { font-weight: 600; font-size: 0.8rem; opacity: 0.7; }
 .btn-aggiungi-rapido {
   background: var(--nero); color: white; border: none; border-radius: 999px;
@@ -120,7 +120,7 @@ a { color: inherit; text-decoration: none; }
 }
 .opzione-riga:last-child { border-bottom: none; }
 .opzione-riga label { display: flex; align-items: center; gap: 10px; flex: 1; cursor: pointer; }
-.opzione-riga input[type="radio"], .opzione-riga input[type="checkbox"] { width: 18px; height: 18px; flex-shrink: 0; accent-color: var(--arancio); }
+.opzione-riga input[type="radio"], .opzione-riga input[type="checkbox"] { width: 18px; height: 18px; flex-shrink: 0; accent-color: var(--oro); }
 .opzione-supplemento { font-weight: 700; opacity: 0.7; font-size: 0.85rem; white-space: nowrap; }
 .rimuovi-ingrediente label { color: #8a6d3b; }
 
@@ -130,8 +130,8 @@ a { color: inherit; text-decoration: none; }
 
 .modal-footer { padding: 14px 22px 4px; position: sticky; bottom: 0; background: var(--crema); }
 .btn-aggiungi-carrello {
-  width: 100%; padding: 15px; border: none; border-radius: 999px; background: var(--arancio);
-  color: white; font-weight: 800; font-size: 1rem; display: flex; align-items: center; justify-content: center; gap: 10px;
+  width: 100%; padding: 15px; border: none; border-radius: 999px; background: var(--oro);
+  color: var(--nero); font-weight: 800; font-size: 1rem; display: flex; align-items: center; justify-content: center; gap: 10px;
 }
 .btn-aggiungi-carrello:disabled { background: #cbbfa8; cursor: not-allowed; }
 

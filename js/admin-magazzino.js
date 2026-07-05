@@ -138,7 +138,7 @@
   function costruisciTestoOrdineFornitore(reparto, items, ordine) {
     let testo = `Ordine materie prime — Reparto ${reparto}\n\n`;
     testo += items.map((it) => `• ${it.quantita} ${it.unita_misura} — ${it.nome}${it.note ? ` (${it.note})` : ""}`).join("\n");
-    testo += `\n\nRichiesto da: ${ordine.creato_da || "Staff"}\nGrazie, Chapeau Burger`;
+    testo += `\n\nRichiesto da: ${ordine.creato_da || "Staff"}\nGrazie, Pizzeria Lievito Reale`;
     return testo;
   }
 

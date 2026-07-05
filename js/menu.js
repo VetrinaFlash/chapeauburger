@@ -1,9 +1,9 @@
 (function () {
   "use strict";
 
-  const CATEGORIE_SENZA_RIMOZIONE = ["vini", "birre", "bibite"];
+  const CATEGORIE_SENZA_RIMOZIONE = ["vini", "birre", "bevande", "pizze-dessert"];
   const CHIAVE_CARRELLO = "cb_carrello";
-  const WHATSAPP_ORDINI = "393337812938";
+  const WHATSAPP_ORDINI = "390000000000";
 
   const stato = {
     catalogo: { categorie: [] },
@@ -516,7 +516,7 @@
     });
     const subtotale = payload.items.reduce((acc, r) => acc + r.prezzo_totale * r.quantita, 0);
 
-    let testo = `Nuovo ordine Chapeau Burger${ordineId ? " #" + ordineId : ""}\n\n`;
+    let testo = `Nuovo ordine Pizzeria Lievito Reale${ordineId ? " #" + ordineId : ""}\n\n`;
     testo += righe.join("\n") + "\n\n";
     testo += `Totale: ${subtotale.toFixed(2)} €\n\n`;
     testo += `Cliente: ${payload.cliente.nome}\nTelefono: ${payload.cliente.telefono}\n`;

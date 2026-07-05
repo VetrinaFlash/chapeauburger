@@ -1,10 +1,10 @@
-name = "chapeau-burger"
+name = "lievito-reale"
 compatibility_date = "2024-09-01"
 pages_build_output_dir = "."
 
 [[d1_databases]]
 binding = "DB"
-database_name = "chapeau-burger-db"
+database_name = "lievito-reale-db"
 database_id = "8e114051-2e7a-4e63-be90-0b7c898c70e9"
 
 # Variabili d'ambiente da configurare in Cloudflare Pages (Settings > Environment variables),
