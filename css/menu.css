@@ -1,16 +1,17 @@
 :root {
-  --nero: #14100d;
-  --crema: #faf5ea;
-  --crema-2: #efe1c4;
-  --oro: #bf9a5f;
-  --oro-scuro: #96733f;
-  --rosso: #7a1620;
+  --nero: #241505;
+  --crema: #f3ece0;
+  --crema-2: #e8dcc2;
+  --oro: #ad7a2c;
+  --oro-scuro: #8a5f1f;
+  --rosso: #a31d1d;
   --verde: #2fa84f;
-  --testo: #241f19;
+  --testo: #2a2015;
   --bianco: #ffffff;
-  --bordo: #e6d9b8;
-  --ombra: 0 8px 24px rgba(20, 16, 13, 0.12);
+  --bordo: #ddccA5;
+  --ombra: 0 8px 24px rgba(24, 13, 2, 0.14);
   --radius: 14px;
+  --font-script: "Pinyon Script", cursive;
   --font-titoli: "Playfair Display", serif;
   --font-testo: "Nunito Sans", sans-serif;
 }
@@ -63,7 +64,7 @@ a { color: inherit; text-decoration: none; }
 
 .menu-container { max-width: 900px; margin: 0 auto; padding: 20px 16px 40px; }
 .categoria-sezione { margin-bottom: 34px; }
-.categoria-titolo { font-size: 1.3rem; margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
+.categoria-titolo { font-family: var(--font-script); font-weight: 400; font-size: 2.4rem; line-height: 1.3; margin-bottom: 10px; display: flex; align-items: center; gap: 12px; }
 
 .prodotti-grid { display: grid; gap: 14px; grid-template-columns: 1fr; }
 @media (min-width: 640px) { .prodotti-grid { grid-template-columns: 1fr 1fr; } }
